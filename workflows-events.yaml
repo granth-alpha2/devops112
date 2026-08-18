@@ -10,7 +10,8 @@ on:
 jobs:
   echo:
     runs-on: ubuntu-latest
-    steps :
+    steps:
       - name: show the trigger
         shell: bash
         run: echo "this workflow was triggered by a(n) ${{github.event_name}}"
+        
