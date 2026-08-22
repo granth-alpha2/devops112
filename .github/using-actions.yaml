@@ -2,7 +2,7 @@ name: Event filters and Acitivity Types
 
 on:
     pull_request :
-    types: opened
+    types: [opened , closed , reopened]
     branches:
           -main
 jobs:
