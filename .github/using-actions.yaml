@@ -1,0 +1,12 @@
+name: Event filters and Acitivity Types
+
+on:
+    pull_request :
+    types: opened
+    branches:
+          -main
+jobs:
+  echo:
+      runs-on: ubuntu-latest
+      steps:
+        -run: echo "This workflow runs only when a pull request is opened on the main branch."
