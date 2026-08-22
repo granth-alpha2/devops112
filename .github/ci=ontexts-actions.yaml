@@ -1,0 +1,33 @@
+name: Display Context Information
+
+on:
+  workflow_dispatch:
+  push:
+
+env:
+  APP_NAME: devops112
+
+jobs:
+  echo-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Display GitHub context
+        run: |
+          echo "Repository: ${{ github.repository }}"
+          echo "Workflow: ${{ github.workflow }}"
+          echo "Actor: ${{ github.actor }}"
+          echo "Event: ${{ github.event_name }}"
+          echo "Branch or ref: ${{ github.ref }}"
+          echo "Commit SHA: ${{ github.sha }}"
+
+      - name: Display job and runner context
+        run: |
+          echo "Job status: ${{ job.status }}"
+          echo "Runner OS: ${{ runner.os }}"
+          echo "Runner architecture: ${{ runner.arch }}"
+
+      - name: Display environment context
+        run: |
+          echo "Application: $APP_NAME"
+          echo "Workspace: $GITHUB_WORKSPACE"
